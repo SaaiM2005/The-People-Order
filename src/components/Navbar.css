@@ -1,0 +1,227 @@
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Brand Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111827;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #147175;
+}
+
+/* Action Buttons */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.action-signin {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1f2937;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.action-signin:hover {
+  color: #147175;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-pill-outline {
+  border: 1.5px solid #1f2937;
+  color: #1f2937;
+  background-color: transparent;
+}
+
+.btn-pill-outline:hover {
+  background-color: #f8fafc;
+  border-color: #000000;
+  color: #000000;
+}
+
+.btn-pill-solid {
+  background-color: #147175;
+  border: 1.5px solid #147175;
+  color: #ffffff;
+}
+
+.btn-pill-solid:hover {
+  background-color: #0f5a5e;
+  border-color: #0f5a5e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(20, 113, 117, 0.25);
+}
+
+/* Hamburger toggle for mobile */
+.navbar-hamburger {
+  display: none;
+  color: #1f2937;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.navbar-hamburger:hover {
+  background-color: #f3f4f6;
+}
+
+/* Mobile Drawer */
+.navbar-mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .navbar-container {
+    padding: 0 24px;
+  }
+  
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+
+  .btn-pill {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-mobile-drawer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    gap: 20px;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+  }
+
+  .navbar-mobile-drawer.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mobile-nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2937;
+    padding: 6px 0;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .mobile-actions .action-signin {
+    text-align: center;
+  }
+
+  .mobile-actions .btn-pill {
+    width: 100%;
+    text-align: center;
+  }
+}
