@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Growth Support Section Styles
+   ========================================================================== */
+
+.growth-support-section {
+  padding: 96px 0 112px;
+  background-color: #f8fafc;
+}
+
+.growth-support-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.32fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* =========================================
+   Left Column: Heading & Description
+   ========================================= */
+.growth-support-intro {
+  max-width: 480px;
+}
+
+.growth-support-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 3.6vw, 3.35rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 24px;
+}
+
+.growth-support-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-slate-600, #475569);
+}
+
+/* =========================================
+   Right Column: 2x2 Service Cards Grid
+   ========================================= */
+.growth-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.growth-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.growth-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07);
+  border-color: #cbd5e1;
+}
+
+/* Number Badges */
+.growth-number-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.badge-mint {
+  background-color: #e0f7f6;
+  color: #0d7679;
+}
+
+.badge-amber {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.badge-sage {
+  background-color: #e2f5ea;
+  color: #15803d;
+}
+
+.badge-lilac {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.growth-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 12px;
+}
+
+.growth-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-slate-600, #64748b);
+  margin-bottom: 28px;
+}
+
+/* Action Button */
+.growth-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 9px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-slate-900, #0f172a);
+  background-color: #ffffff;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: auto;
+  transition: all 0.2s ease;
+}
+
+.growth-card-btn:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.growth-btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.growth-card-btn:hover .growth-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+@media (max-width: 1080px) {
+  .growth-support-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .growth-support-intro {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .growth-support-section {
+    padding: 64px 0 80px;
+  }
+
+  .growth-support-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .growth-card {
+    padding: 24px 20px;
+  }
+}

@@ -6,6 +6,7 @@ import FounderStory from './sections/FounderStory';
 import OpportunitiesSection from './sections/OpportunitiesSection';
 import ChampionsSection from './sections/ChampionsSection';
 import CommunityInsights from './sections/CommunityInsights';
+import GrowthSupport from './sections/GrowthSupport';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
         <OpportunitiesSection />
         <ChampionsSection />
         <CommunityInsights />
+        <GrowthSupport />
         {/* Additional Figma sections will be added here section by section */}
       </main>
       {/* <Footer /> */}
