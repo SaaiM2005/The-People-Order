@@ -24,7 +24,7 @@ function App() {
         <GrowthSupport />
         {/* Additional Figma sections will be added here section by section */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
