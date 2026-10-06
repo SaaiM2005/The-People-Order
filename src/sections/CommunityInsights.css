@@ -1,0 +1,521 @@
+/* ==========================================================================
+   Community & Insights Section Styles
+   ========================================================================== */
+
+.community-section {
+  padding: 96px 0 112px;
+  background-color: #ffffff;
+}
+
+.community-header {
+  margin-bottom: 48px;
+}
+
+.community-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 3.8vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-slate-900, #0f172a);
+}
+
+/* =========================================
+   Row 1: Featured Essay + Right Column
+   Card Layout Matching Reference Image
+   ========================================= */
+.community-row-upper {
+  display: grid;
+  grid-template-columns: 1.82fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+  align-items: stretch;
+}
+
+/* Featured Essay Card */
+.featured-essay-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.featured-essay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -8px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.essay-image-wrapper {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.essay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.4s ease;
+}
+
+.featured-essay-card:hover .essay-image {
+  transform: scale(1.025);
+}
+
+.essay-content {
+  padding: 34px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.essay-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-slate-500, #64748b);
+  margin-bottom: 16px;
+}
+
+.essay-tag-icon {
+  color: var(--color-slate-500, #64748b);
+}
+
+.essay-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.48rem, 2.1vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 12px;
+}
+
+.essay-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.essay-title a:hover {
+  color: var(--color-pine-teal, #147175);
+}
+
+.essay-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-slate-600, #475569);
+  margin-bottom: 32px;
+}
+
+.essay-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-slate-400, #94a3b8);
+  margin-top: auto;
+}
+
+.meta-dot {
+  color: #cbd5e1;
+}
+
+/* Right Column */
+.community-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Newsletter Card - Compact natural height, sits slightly above image bottom */
+.newsletter-card {
+  background-color: #e2f7f5;
+  border-radius: 20px;
+  padding: 30px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.newsletter-icon-wrap {
+  color: var(--color-pine-teal, #147175);
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.newsletter-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.22rem, 1.55vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 22px;
+}
+
+.newsletter-form {
+  width: 100%;
+}
+
+.newsletter-input-group {
+  background-color: #ffffff;
+  border-radius: 9999px;
+  padding: 5px 6px 5px 18px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.newsletter-input-group:focus-within {
+  box-shadow: 0 0 0 2px var(--color-pine-teal, #147175);
+}
+
+.newsletter-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-slate-900, #0f172a);
+  flex: 1;
+  min-width: 0;
+  padding-right: 10px;
+}
+
+.newsletter-input::placeholder {
+  color: var(--color-slate-400, #94a3b8);
+}
+
+.newsletter-submit-btn {
+  background-color: #0c1e28;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 9px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: var(--color-pine-teal, #147175);
+  box-shadow: 0 2px 8px rgba(20, 113, 117, 0.25);
+}
+
+.newsletter-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f766e;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 9999px;
+}
+
+/* Micro-Cards Row - Vertically long cards extending to bottom baseline */
+.micro-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.micro-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.micro-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
+}
+
+.micro-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-slate-500, #64748b);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.event-tag-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-icon {
+  color: var(--color-slate-500, #64748b);
+}
+
+.micro-card-quote {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.42;
+  color: var(--color-slate-900, #0f172a);
+  margin: 0 0 12px;
+  font-style: normal;
+}
+
+.micro-card-event-title {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-slate-900, #0f172a);
+  margin: 0 0 12px;
+}
+
+.micro-card-author,
+.micro-card-event-meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-slate-400, #94a3b8);
+  margin-top: 0;
+}
+
+/* =========================================
+   Row 2: Resources Library + Community Story
+   ========================================= */
+.community-row-lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Resources Library Card */
+.resources-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resources-header {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-slate-500, #64748b);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.resources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resource-item {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.resource-item:last-child {
+  border-bottom: none;
+}
+
+.resource-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  text-decoration: none;
+  color: var(--color-slate-900, #0f172a);
+  transition: color 0.2s ease;
+}
+
+.resource-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: inherit;
+  padding-right: 12px;
+}
+
+.resource-arrow {
+  color: var(--color-slate-400, #94a3b8);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.resource-link:hover {
+  color: var(--color-pine-teal, #147175);
+}
+
+.resource-link:hover .resource-arrow {
+  color: var(--color-pine-teal, #147175);
+  transform: translate(2px, -2px);
+}
+
+/* Community Story Card */
+.story-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
+}
+
+.story-tag {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-slate-500, #64748b);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.story-tag-icon {
+  color: var(--color-slate-500, #64748b);
+}
+
+.story-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.48rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 24px;
+}
+
+.story-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.story-title a:hover {
+  color: var(--color-pine-teal, #147175);
+}
+
+.story-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.story-pill {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 4px 13px;
+}
+
+.pill-cyan {
+  background-color: #e0f7f6;
+  color: #0d7679;
+}
+
+.pill-neutral {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: var(--color-slate-600, #475569);
+}
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+@media (max-width: 1080px) {
+  .community-row-upper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .essay-image-wrapper {
+    height: 320px;
+  }
+
+  .community-row-lower {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .community-section {
+    padding: 64px 0 80px;
+  }
+
+  .community-heading {
+    font-size: 2.1rem;
+    margin-bottom: 32px;
+  }
+
+  .essay-content {
+    padding: 24px 20px;
+  }
+
+  .newsletter-card {
+    padding: 24px 20px;
+  }
+
+  .micro-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .resources-card {
+    padding: 24px 20px;
+  }
+
+  .story-card {
+    padding: 24px 20px;
+  }
+}
