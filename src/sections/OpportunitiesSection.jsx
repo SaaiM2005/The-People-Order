@@ -16,6 +16,7 @@ const opportunitiesData = [
     id: 1,
     title: 'Senior Strategy Associate',
     company: 'Growth-led Healthcare Startup',
+    sector: 'healthcare',
     description: 'Building systems and strategy for a rapidly scaling team.',
     tags: ['Remote-Friendly', 'Full Time', 'Strategy', '2–4 Years'],
     location: 'Bengaluru, IN'
@@ -24,6 +25,7 @@ const opportunitiesData = [
     id: 2,
     title: 'Climate Programs Lead',
     company: 'Global Climate Foundation',
+    sector: 'climate',
     description: 'Designing programs that move capital toward climate adaptation.',
     tags: ['Hybrid', 'Full Time', 'Climate', '5–7 Years'],
     location: 'Nairobi, KE'
@@ -32,6 +34,7 @@ const opportunitiesData = [
     id: 3,
     title: 'CSR Partnerships Manager',
     company: 'Listed Manufacturing Group',
+    sector: 'csr',
     description: 'Owning long-term CSR partnerships across education and livelihoods.',
     tags: ['On-site', 'Full Time', 'CSR', '4–6 Years'],
     location: 'Mumbai, IN'
@@ -40,6 +43,7 @@ const opportunitiesData = [
     id: 4,
     title: 'People Operations Lead',
     company: 'Series B Education Platform',
+    sector: 'education',
     description: 'Building people systems for an org doubling in headcount.',
     tags: ['Remote', 'Full Time', 'People Ops', '3–5 Years'],
     location: 'Remote'
@@ -49,10 +53,41 @@ const opportunitiesData = [
 export default function OpportunitiesSection() {
   const [activeSector, setActiveSector] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [submittedQuery, setSubmittedQuery] = useState('');
 
   const handleSectorClick = (sectorId) => {
     setActiveSector(activeSector === sectorId ? null : sectorId);
   };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    setSubmittedQuery(searchQuery.trim());
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    setSubmittedQuery('');
+    setActiveSector(null);
+  };
+
+  // Filter opportunities based on submitted search query and active sector
+  const currentQuery = submittedQuery.toLowerCase();
+  const filteredJobs = opportunitiesData.filter((job) => {
+    const matchesSector = !activeSector || job.sector === activeSector;
+    
+    if (!currentQuery) {
+      return matchesSector;
+    }
+
+    const matchesText = 
+      job.title.toLowerCase().includes(currentQuery) ||
+      job.company.toLowerCase().includes(currentQuery) ||
+      job.description.toLowerCase().includes(currentQuery) ||
+      job.location.toLowerCase().includes(currentQuery) ||
+      job.tags.some((tag) => tag.toLowerCase().includes(currentQuery));
+
+    return matchesSector && matchesText;
+  });
 
   return (
     <section className="opportunities-section">
@@ -98,14 +133,19 @@ export default function OpportunitiesSection() {
             </div>
 
             {/* Search Bar */}
-            <form className="opp-search-bar" onSubmit={(e) => e.preventDefault()}>
+            <form className="opp-search-bar" onSubmit={handleSearchSubmit}>
               <div className="search-input-group">
                 <Search size={18} className="search-icon" />
                 <input
                   type="text"
                   placeholder="Search roles, sectors, locations..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    if (e.target.value === '') {
+                      setSubmittedQuery('');
+                    }
+                  }}
                   className="search-input"
                 />
               </div>
@@ -114,50 +154,67 @@ export default function OpportunitiesSection() {
               </button>
             </form>
 
-            {/* 2x2 Opportunity Cards Grid */}
-            <div className="opp-cards-grid">
-              {opportunitiesData.map((job) => (
-                <article key={job.id} className="job-card">
-                  {/* Top: Logo Box & External Link Icon */}
-                  <div className="job-card-top">
-                    <div className="job-logo-box">Logo</div>
-                    <button className="job-external-btn" aria-label="Open role">
-                      <ArrowUpRight size={18} />
-                    </button>
-                  </div>
+            {/* 2x2 Opportunity Cards Grid or Empty State */}
+            {filteredJobs.length > 0 ? (
+              <div className="opp-cards-grid">
+                {filteredJobs.map((job) => (
+                  <article key={job.id} className="job-card">
+                    {/* Top: Logo Box & External Link Icon */}
+                    <div className="job-card-top">
+                      <div className="job-logo-box">Logo</div>
+                      <button className="job-external-btn" aria-label="Open role">
+                        <ArrowUpRight size={18} />
+                      </button>
+                    </div>
 
-                  {/* Title & Company */}
-                  <h3 className="job-title">{job.title}</h3>
-                  <p className="job-company">{job.company}</p>
+                    {/* Title & Company */}
+                    <h3 className="job-title">{job.title}</h3>
+                    <p className="job-company">{job.company}</p>
 
-                  {/* Excerpt */}
-                  <p className="job-desc">{job.description}</p>
+                    {/* Excerpt */}
+                    <p className="job-desc">{job.description}</p>
 
-                  {/* Tags */}
-                  <div className="job-tags-list">
-                    {job.tags.map((tag, idx) => (
-                      <span key={idx} className="job-tag-pill">{tag}</span>
-                    ))}
-                  </div>
+                    {/* Tags */}
+                    <div className="job-tags-list">
+                      {job.tags.map((tag, idx) => (
+                        <span key={idx} className="job-tag-pill">{tag}</span>
+                      ))}
+                    </div>
 
-                  {/* Location */}
-                  <div className="job-location">
-                    <MapPin size={15} className="location-pin" />
-                    <span>{job.location}</span>
-                  </div>
+                    {/* Location */}
+                    <div className="job-location">
+                      <MapPin size={15} className="location-pin" />
+                      <span>{job.location}</span>
+                    </div>
 
-                  {/* Bottom Actions */}
-                  <div className="job-card-footer">
-                    <button type="button" className="job-btn job-btn-outline">
-                      Learn More
-                    </button>
-                    <button type="button" className="job-btn job-btn-primary">
-                      Quick Apply
-                    </button>
-                  </div>
-                </article>
-              ))}
-            </div>
+                    {/* Bottom Actions */}
+                    <div className="job-card-footer">
+                      <button type="button" className="job-btn job-btn-outline">
+                        Learn More
+                      </button>
+                      <button type="button" className="job-btn job-btn-primary">
+                        Quick Apply
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="opp-empty-state">
+                <p className="empty-state-title">No opportunities found</p>
+                <p className="empty-state-desc">
+                  We couldn't find any roles matching your current search criteria.
+                </p>
+                <button 
+                  type="button" 
+                  className="empty-state-clear-btn"
+                  onClick={handleClearSearch}
+                >
+                  Clear search & filters
+                </button>
+              </div>
+            )}
+
 
             {/* Bottom Link */}
             <div className="opp-bottom-action">
