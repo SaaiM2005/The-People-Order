@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import FeatureCards from './sections/FeatureCards';
+import FounderStory from './sections/FounderStory';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -12,6 +13,7 @@ function App() {
       <main className="main-content">
         <Hero />
         <FeatureCards />
+        <FounderStory />
         {/* Additional Figma sections will be added here section by section */}
       </main>
       {/* <Footer /> */}
