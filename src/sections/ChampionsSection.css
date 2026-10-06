@@ -1,0 +1,451 @@
+/* ==========================================================================
+   Champions & Fractional Experts + Fractional Opportunities Section Styles
+   ========================================================================== */
+
+.champions-section {
+  padding: 96px 0 112px;
+  background-color: #f8fafc;
+}
+
+/* Common Section Eyebrow */
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.eyebrow-dash {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--color-pine-teal, #147175);
+  border-radius: 1px;
+}
+
+.eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-pine-teal, #147175);
+  text-transform: uppercase;
+}
+
+/* =========================================
+   Upper Section: Header & Description
+   ========================================= */
+.champions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.champions-header-left {
+  max-width: 680px;
+}
+
+.champions-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 3.4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--color-slate-900, #0f172a);
+}
+
+.champions-header-right {
+  max-width: 420px;
+  padding-bottom: 6px;
+}
+
+.champions-header-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-slate-600, #475569);
+}
+
+/* =========================================
+   Upper Section: 4 Champions Cards Grid
+   ========================================= */
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.champion-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.champion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -8px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.champion-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1 / 1.14;
+  margin-bottom: 16px;
+  background-color: #f1f5f9;
+}
+
+.champion-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.champion-card:hover .champion-image {
+  transform: scale(1.03);
+}
+
+.champion-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.champion-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.champion-name {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--color-slate-900, #0f172a);
+  line-height: 1.25;
+}
+
+.champion-status-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background-color: #dff6f5;
+  color: #0f766e;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.champion-role {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-slate-600, #475569);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.champion-experience {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-slate-500, #64748b);
+  margin-bottom: 20px;
+}
+
+/* Action Buttons */
+.champion-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-view-profile {
+  flex: 1;
+  padding: 9px 10px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-slate-900, #0f172a);
+  background-color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-view-profile:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #000000;
+}
+
+.btn-book-call {
+  flex: 1.1;
+  padding: 9px 10px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0c1e28;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-book-call:hover {
+  background-color: var(--color-pine-teal, #147175);
+  box-shadow: 0 4px 12px rgba(20, 113, 117, 0.28);
+}
+
+/* =========================================
+   Lower Section: Fractional Opportunities Container
+   ========================================= */
+.fractional-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 48px;
+  margin-top: 64px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.03);
+}
+
+.fractional-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.fractional-header-left {
+  max-width: 620px;
+}
+
+.fractional-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-slate-900, #0f172a);
+}
+
+/* Filter Pills */
+.fractional-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  background-color: #e6f7f7;
+  color: #0d7679;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill:hover {
+  background-color: #d6f2f2;
+}
+
+.filter-pill.active {
+  background-color: var(--color-pine-teal, #147175);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(20, 113, 117, 0.25);
+}
+
+/* 3 Fractional Cards Grid */
+.fractional-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.fractional-card {
+  background-color: #ffffff;
+  border: 1px solid #e9eef2;
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.fractional-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07);
+}
+
+.fractional-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.fractional-type {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-slate-500, #64748b);
+  text-transform: uppercase;
+}
+
+.fractional-arrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--color-slate-500, #64748b);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fractional-card:hover .fractional-arrow-wrap {
+  color: var(--color-pine-teal, #147175);
+  transform: translate(2px, -2px);
+}
+
+.fractional-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-slate-900, #0f172a);
+  margin-bottom: 12px;
+}
+
+.fractional-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-slate-600, #475569);
+  margin-bottom: 28px;
+}
+
+/* Tag Pills Row */
+.fractional-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.fractional-tag-pill {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-slate-600, #475569);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 5px 14px;
+}
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+@media (max-width: 1180px) {
+  .champions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .champion-image-wrapper {
+    aspect-ratio: 1 / 1.05;
+  }
+}
+
+@media (max-width: 1024px) {
+  .champions-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .champions-header-right {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  .fractional-container {
+    padding: 36px 28px;
+    margin-top: 52px;
+  }
+
+  .fractional-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .fractional-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .champions-section {
+    padding: 64px 0 80px;
+  }
+
+  .champions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fractional-container {
+    padding: 24px 18px;
+    border-radius: 20px;
+    margin-top: 44px;
+  }
+
+  .fractional-card {
+    padding: 22px 18px;
+  }
+
+  .fractional-filters {
+    gap: 8px;
+  }
+
+  .filter-pill {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+}
